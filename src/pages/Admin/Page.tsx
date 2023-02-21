@@ -22,8 +22,8 @@ const Page = () => {
 
   return (
     dataProvider && (
-      <Admin dataProvider={dataProvider}>
-        <Resource name="posts" list={PostList} edit={PostEdit} create={PostCreate} />
+      <Admin basename="/admin" dataProvider={dataProvider}>
+        <Resource name="Posts" list={PostList} edit={PostEdit} create={PostCreate}   />
       </Admin>
     )
   );

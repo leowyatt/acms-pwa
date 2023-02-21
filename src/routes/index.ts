@@ -14,7 +14,7 @@ const routes: Routes = {
   },
   [Pages.Admin]: {
     component: asyncComponentLoader(() => import('@/pages/Admin')),
-    path: '/admin',
+    path: '/admin/*',
     title: 'admin',
     icon: GitHubIcon,
   },
