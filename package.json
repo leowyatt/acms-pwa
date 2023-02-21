@@ -13,11 +13,14 @@
   },
   "license": "MIT",
   "scripts": {
-    "dev": "vite",
+    "start": "yarn build; yarn preview",
+    "develop": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "https-preview": "serve dist",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "dev": "yarn pm2 startOrRestart ecosystem.config.js --only pwa-dev",
+    "prod": "yarn pm2 startOrRestart ecosystem.config.js --only pwa-prod"
   },
   "dependencies": {
     "@emotion/react": "^11.10.4",
@@ -30,6 +33,7 @@
     "is-mobile": "^3.1.1",
     "notistack": "^2.0.5",
     "react": "^18.2.0",
+    "react-admin": "^4.8.1",
     "react-dom": "^18.2.0",
     "react-error-boundary": "^3.1.4",
     "react-helmet-async": "^1.3.0",
@@ -51,6 +55,7 @@
     "https-localhost": "^4.7.1",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
+    "pm2": "^5.2.2",
     "prettier": "2.7.1",
     "typescript": "^4.8.3",
     "vite": "^3.1.3",

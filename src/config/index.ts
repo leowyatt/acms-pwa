@@ -1,5 +1,7 @@
 import isMobile from '@/utils/is-mobile';
 
+
+
 import type { Notifications } from './types';
 
 const title = 'React PWA';
@@ -52,6 +54,11 @@ const defaultMetaTags = {
 };
 const giphy404 = 'https://giphy.com/embed/xTiN0L7EW5trfOvEk0';
 
+const tokenDef =
+  'f2519beaff7c33434789c7d740346d2ea7d25caaf85eb5182c671a72997a459fd79bac795aee235db0557106b2802eabb9755fa8018008dc092efdf848802c60c95a92ef00ba35f04d7830de1d97437efbb99532197800779e35a7cb8dd748c0287e879306603b5ec7e2015bf31907967b20403b3365a68bdbb0237624daa1f1';
+
+const apiUrl = 'http://localhost:6010/api';
+
 export {
   loader,
   notifications,
@@ -62,4 +69,6 @@ export {
   title,
   defaultMetaTags,
   giphy404,
+  tokenDef,
+  apiUrl,
 };
