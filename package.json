@@ -22,7 +22,12 @@
     "dev": "yarn pm2 startOrRestart ecosystem.config.js --only pwa-dev",
     "prod": "yarn pm2 startOrRestart ecosystem.config.js --only pwa-prod"
   },
+  "#dep": {
+    "ra-data-graphql": "^4.8.0",
+    "graphql": "^16.6.0"
+  },
   "dependencies": {
+    "@apollo/client": "^3.7.9",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@mui/icons-material": "^5.10.6",
@@ -32,6 +37,8 @@
     "@mui/utils": "^5.10.6",
     "is-mobile": "^3.1.1",
     "notistack": "^2.0.5",
+    "graphql": "^14.1.1",
+    "ra-data-graphql-strapi": "^2.9.3",
     "react": "^18.2.0",
     "react-admin": "^4.8.1",
     "react-dom": "^18.2.0",
@@ -79,5 +86,6 @@
     "pwa",
     "starter-kit",
     "vite"
-  ]
+  ],
+  "type": "commonjs"
 }
