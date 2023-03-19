@@ -1,29 +1,30 @@
-import { Admin, Resource, fetchUtils } from 'react-admin';
+import { SetStateAction, useEffect, useState } from 'react';
+import { Admin, DataProvider, Resource } from 'react-admin';
+
+import { useApolloClient } from '@apollo/client';
+import buildGraphQLProvider, { BuildQuery, IntrospectionResult } from 'ra-data-graphql-strapi';
 
 import { PostCreate, PostEdit, PostList } from '@/components/Admin/posts';
-import { apiUrl, tokenDef } from '@/config';
-
-import strapiRestProvider from '../../utils/simpleRestProvider';
-
-localStorage.setItem('token', tokenDef);
 
 const Page = () => {
-  const httpClient = (url: string, options: any = {}) => {
-    if (!options.headers) {
-      options.headers = new Headers({ Accept: 'application/json' });
-    }
-    const token = localStorage.getItem('token');
+  const client = useApolloClient();
 
-    options.headers.set('Authorization', `Bearer ${token}`);
-    return fetchUtils.fetchJson(url, options);
-  };
-
-  const dataProvider = strapiRestProvider(apiUrl, httpClient);
+  const [dataProvider, setDataProvider] = useState<DataProvider>();
+  useEffect(() => {
+    buildGraphQLProvider({
+      client,
+      buildQuery: function (introspectionResults: IntrospectionResult): BuildQuery {
+        throw new Error('Function not implemented.');
+      },
+    }).then((dataProvider: SetStateAction<DataProvider<string> | undefined>) =>
+      setDataProvider(dataProvider),
+    );
+  }, [client]);
 
   return (
     dataProvider && (
       <Admin basename="/admin" dataProvider={dataProvider}>
-        <Resource name="Posts" list={PostList} edit={PostEdit} create={PostCreate}   />
+        <Resource name="Post" list={PostList} edit={PostEdit} create={PostCreate} />
       </Admin>
     )
   );
