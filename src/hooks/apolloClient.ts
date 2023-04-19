@@ -4,7 +4,7 @@ import { setContext } from '@apollo/client/link/context';
 import { tokenDef } from '@/config';
 
 const httpLink = createHttpLink({
-  uri: 'http://127.0.0.1:6010/graphql',
+  uri: 'http://127.0.0.1:4010/graphql',
   // credentials: "include",
   // credentials: "same-origin",
 });
