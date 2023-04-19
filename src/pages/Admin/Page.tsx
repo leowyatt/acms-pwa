@@ -3,7 +3,7 @@ import { Admin, Resource, fetchUtils } from 'react-admin';
 import { PostCreate, PostEdit, PostList } from '@/components/Admin/posts';
 import { apiUrl, tokenDef } from '@/config';
 
-import strapiRestProvider from '../../utils/simpleRestProvider';
+import strapiRestProvider from '@/utils/simpleRestProvider';
 
 localStorage.setItem('token', tokenDef);
 
