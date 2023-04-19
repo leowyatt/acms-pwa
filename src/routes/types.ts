@@ -8,7 +8,9 @@ import type { SvgIconProps } from '@mui/material/SvgIcon';
 
 enum Pages {
   Welcome,
-  Admin,
+  Page,
+  Strapi,
+  Postgraphile,
   NotFound,
 }
 
