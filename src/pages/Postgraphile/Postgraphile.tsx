@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Admin, Resource, fetchUtils } from 'react-admin';
 
+
+
 import { useApolloClient } from '@apollo/react-hooks';
 import pgDataProvider from 'ra-postgraphile';
 
-import { PostCreate, PostEdit, PostList } from '@/components/Strapi/posts';
-import { apiUrl, tokenDef } from '@/config';
+
+
+import { ContractsCreate, ContractsEdit, ContractsList } from '@/components/Postgraphile/conracts';
 
 const Postgraphile = () => {
   const [dataProvider, setDataProvider] = useState(null);
@@ -21,7 +24,12 @@ const Postgraphile = () => {
   return (
     dataProvider && (
       <Admin basename="/postgraphile" dataProvider={dataProvider}>
-        <Resource name="Posts" list={PostList} edit={PostEdit} create={PostCreate} />
+        <Resource
+          name="Contracts"
+          list={ContractsList}
+          edit={ContractsEdit}
+          create={ContractsCreate}
+        />
       </Admin>
     )
   );
