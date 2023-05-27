@@ -8,7 +8,7 @@ import { ContractsCreate, ContractsEdit, ContractsList } from '@/components/Post
 import { RaLayout } from '@/components/Ra/RaLayout';
 
 const Postgraphile = () => {
-  const [dataProvider, setDataProvider] = useState(null);
+  const [dataProvider, setDataProvider] = useState(null as any);
   const client = useApolloClient();
 
   useEffect(() => {
