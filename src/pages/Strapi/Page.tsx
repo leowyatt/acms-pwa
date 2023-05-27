@@ -1,7 +1,8 @@
 import { Admin, Resource, fetchUtils } from 'react-admin';
 
+import { RaLayout } from '@/components/Ra/RaLayout';
 import { PostCreate, PostEdit, PostList } from '@/components/Strapi/posts';
-import { apiUrl, tokenDef } from '@/config';
+import { apiUrlStrapi as apiUrl, tokenDef } from '@/config';
 import strapiRestProvider from '@/utils/simpleRestProvider';
 
 localStorage.setItem('token', tokenDef);
@@ -21,7 +22,7 @@ const Page = () => {
 
   return (
     dataProvider && (
-      <Admin basename="/strapi" dataProvider={dataProvider}>
+      <Admin layout={RaLayout} basename="/strapi" dataProvider={dataProvider}>
         <Resource name="Posts" list={PostList} edit={PostEdit} create={PostCreate} />
       </Admin>
     )

@@ -49,7 +49,7 @@ function Header() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar color="transparent" elevation={1} position="static">
+      <AppBar color="transparent" elevation={1} position="relative">
         <Toolbar sx={{ justifyContent: 'space-between' }}>
           <FlexBox sx={{ alignItems: 'center' }}>
             <IconButton

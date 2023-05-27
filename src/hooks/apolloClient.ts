@@ -1,7 +1,7 @@
 import { ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
-import { apiUrl, tokenDef } from '@/config';
+import { apiUrlPostgraphile as apiUrl, tokenDef } from '@/config';
 
 const httpLink = createHttpLink({
   uri: `${apiUrl}/graphql`,
