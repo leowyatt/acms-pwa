@@ -58,7 +58,11 @@ export const PostFilterSidebar = () => {
 };
 
 export const ContractsList = (props: any) => (
-  <List aside={<PostFilterSidebar />} filters={<ContractsFilter />} {...props}>
+  <List
+    // aside={<PostFilterSidebar />}
+    filters={<ContractsFilter />}
+    {...props}
+  >
     <Datagrid>
       {/* <TextField source="id" /> */}
       <TextField source="num" />
