@@ -1,8 +1,6 @@
 import GitHubIcon from '@mui/icons-material/GitHub';
 import HomeIcon from '@mui/icons-material/Home';
 
-
-
 import asyncComponentLoader from '@/utils/loader';
 
 import { Pages, Routes } from './types';
@@ -20,12 +18,12 @@ const routes: Routes = {
     title: 'Page',
     icon: GitHubIcon,
   },
-  [Pages.Strapi]: {
-    component: asyncComponentLoader(() => import('@/pages/Strapi')),
-    path: '/strapi/*',
-    title: 'Strapi',
-    icon: GitHubIcon,
-  },
+  // [Pages.Strapi]: {
+  //   component: asyncComponentLoader(() => import('@/pages/Strapi')),
+  //   path: '/strapi/*',
+  //   title: 'Strapi',
+  //   icon: GitHubIcon,
+  // },
   [Pages.Postgraphile]: {
     component: asyncComponentLoader(() => import('@/pages/Postgraphile')),
     path: '/postgraphile/*',

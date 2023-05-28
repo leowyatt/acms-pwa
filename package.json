@@ -10,7 +10,8 @@
     "https-preview": "serve dist",
     "prepare": "husky install",
     "dev": "yarn pm2 startOrRestart ecosystem.config.js --only pwa-dev",
-    "prod": "yarn pm2 startOrRestart ecosystem.config.js --only pwa-prod"
+    "prod": "yarn pm2 startOrRestart ecosystem.config.js --only pwa-prod",
+    "logs": "yarn pm2 logs"
   },
   "dependencies": {
     "@apollo/react-hooks": "^4.0.0",
