@@ -9,9 +9,11 @@
     "preview": "vite preview",
     "https-preview": "serve dist",
     "prepare": "husky install",
-    "dev": "yarn pm2 startOrRestart ecosystem.config.js --only pwa-dev",
-    "prod": "yarn pm2 startOrRestart ecosystem.config.js --only pwa-prod",
-    "logs": "yarn pm2 logs"
+    "logs": "yarn pm2 logs",
+    "dev": "yarn ypm --only pwa-dev",
+    "prod": "yarn ypm --only pwa-prod",
+    "serve": "yarn ypm --only pwa-serve",
+    "ypm": "yarn pm2 startOrRestart ecosystem.config.js"
   },
   "dependencies": {
     "@apollo/react-hooks": "^4.0.0",
@@ -25,6 +27,8 @@
     "is-mobile": "^3.1.1",
     "notistack": "^2.0.5",
     "ra-data-graphql": "^4.8.4",
+    "ra-i18n-polyglot": "^4.11.0",
+    "ra-language-russian": "^3.13.5",
     "ra-postgraphile": "^6.1.0",
     "react": "^18.2.0",
     "react-admin": "^4.8.1",

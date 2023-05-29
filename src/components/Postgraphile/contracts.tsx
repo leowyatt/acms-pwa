@@ -18,7 +18,10 @@ import {
   SaveButton,
   SavedQueriesList,
   SelectInput,
+  Show,
+  ShowButton,
   SimpleForm,
+  SimpleShowLayout,
   TextField,
   TextInput,
   Toolbar,
@@ -35,9 +38,9 @@ export const ContractsIcon = BookIcon;
 export const ContractsFilter = (props: any) => (
   <Filter {...props}>
     {/* <TextInput label="Search" source="q" alwaysOn /> */}
-    <TextInput label="Number" source="num" alwaysOn />
-    <DateInput label="Start Date" source="startAt" alwaysOn />
-    <DateInput label="End Date" source="endAt" alwaysOn />
+    <TextInput label="resources.contracts.fields.num" source="num" alwaysOn />
+    <DateInput label="resources.contracts.fields.startAt" source="startAt" alwaysOn />
+    <DateInput label="resources.contracts.fields.endAt" source="endAt" alwaysOn />
   </Filter>
 );
 
@@ -49,8 +52,11 @@ export const PostFilterSidebar = () => {
         {/* <SavedQueriesList /> */}
         {/* <FilterLiveSearch /> */}
         <FilterList label="Filter" icon={<CategoryIcon />}>
-          <FilterListItem label="Is Expired" value={{ dateEnd: true }} />
-          <FilterListItem label="Not Joined" value={{ has_newsletter: true }} />
+          <FilterListItem label="resources.contracts.fields.isExpired" value={{ dateEnd: true }} />
+          <FilterListItem
+            label="resources.contracts.fields.notJoined"
+            value={{ has_newsletter: true }}
+          />
         </FilterList>
       </CardContent>
     </Card>
@@ -65,11 +71,12 @@ export const ContractsList = (props: any) => (
   >
     <Datagrid>
       {/* <TextField source="id" /> */}
-      <TextField source="num" />
-      <DateField source="createdAt" />
-      <DateField source="startAt" />
-      <DateField source="endAt" />
+      <TextField source="num" label="resources.contracts.fields.num" />
+      <DateField source="createdAt" label="resources.contracts.fields.createdAt" />
+      <DateField source="startAt" label="resources.contracts.fields.startAt" />
+      <DateField source="endAt" label="resources.contracts.fields.endAt" />
       <EditButton />
+      <ShowButton />
     </Datagrid>
   </List>
 );
@@ -92,10 +99,10 @@ const EditToolbar = (props: any) => (
 export const ContractsEdit = (props: any) => (
   <Edit title={<ContractsTitle />} {...props}>
     <SimpleForm toolbar={<EditToolbar />}>
-      <TextInput label="Number Contract" source="num" />
-      <TextInput label="Created Date" source="createdAt" disabled />
-      <DateInput label="Start Date" source="startAt" />
-      <DateInput label="End Date" source="endAt" />
+      <TextInput label="resources.contracts.fields.num" source="num" />
+      <TextInput label="resources.contracts.fields.createdAt" source="createdAt" disabled />
+      <DateInput label="resources.contracts.fields.startAt" source="startAt" />
+      <DateInput label="resources.contracts.fields.endAt" source="endAt" />
     </SimpleForm>
   </Edit>
 );
@@ -103,9 +110,20 @@ export const ContractsEdit = (props: any) => (
 export const ContractsCreate = (props: any) => (
   <Create title="Create a Contracts" {...props}>
     <SimpleForm>
-      <TextInput label="Number Contract" source="num" />
-      <DateInput label="Start Date" source="startAt" />
-      <DateInput label="End Date" source="endAt" />
+      <TextInput label="resources.contracts.fields.num" source="num" />
+      <DateInput label="resources.contracts.fields.startAt" source="startAt" />
+      <DateInput label="resources.contracts.fields.endAt" source="endAt" />
     </SimpleForm>
   </Create>
+);
+
+export const ContractShow = () => (
+  <Show>
+    <SimpleShowLayout>
+      <TextField source="num" label="resources.contracts.fields.num" />
+      <DateField source="createdAt" label="resources.contracts.fields.createdAt" />
+      <DateField source="startAt" label="resources.contracts.fields.startAt" />
+      <DateField source="endAt" label="resources.contracts.fields.endAt" />{' '}
+    </SimpleShowLayout>
+  </Show>
 );

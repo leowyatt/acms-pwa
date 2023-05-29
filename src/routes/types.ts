@@ -1,15 +1,12 @@
 import { FC } from 'react';
 import { PathRouteProps } from 'react-router-dom';
 
-
-
 import type { SvgIconProps } from '@mui/material/SvgIcon';
-
 
 enum Pages {
   Welcome,
   Page,
-  Strapi,
+  // Strapi,
   Postgraphile,
   NotFound,
 }

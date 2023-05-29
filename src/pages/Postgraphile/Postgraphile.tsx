@@ -1,11 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { Admin, Resource, fetchUtils } from 'react-admin';
 
+import ArticleIcon from '@mui/icons-material/Article';
+
 import { useApolloClient } from '@apollo/react-hooks';
 import pgDataProvider from 'ra-postgraphile';
 
-import { ContractsCreate, ContractsEdit, ContractsList } from '@/components/Postgraphile/contracts';
+import {
+  ContractShow,
+  ContractsCreate,
+  ContractsEdit,
+  ContractsList,
+} from '@/components/Postgraphile/contracts';
 import { RaLayout } from '@/components/Ra/RaLayout';
+import { i18nProvider } from '@/i18n/ru';
 
 const Postgraphile = () => {
   const [dataProvider, setDataProvider] = useState(null as any);
@@ -20,12 +28,20 @@ const Postgraphile = () => {
 
   return (
     dataProvider && (
-      <Admin layout={RaLayout} basename="/postgraphile" dataProvider={dataProvider}>
+      <Admin
+        layout={RaLayout}
+        basename="/postgraphile"
+        dataProvider={dataProvider}
+        i18nProvider={i18nProvider}
+      >
         <Resource
-          name="Contracts"
+          options={{ label: 'Договора' }}
+          name="contracts"
+          icon={ArticleIcon}
           list={ContractsList}
           edit={ContractsEdit}
           create={ContractsCreate}
+          show={ContractShow}
         />
       </Admin>
     )

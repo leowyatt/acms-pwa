@@ -19,5 +19,14 @@ module.exports = {
       },
       // watch: true,
     },
+    {
+      version: pkg.version,
+      name: 'pwa-serve',
+      script: 'yarn serve',
+      env: {
+        NODE_ENV: 'development',
+      },
+      // watch: true,
+    },
   ],
 };

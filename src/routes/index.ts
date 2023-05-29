@@ -1,3 +1,4 @@
+import ArticleIcon from '@mui/icons-material/Article';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import HomeIcon from '@mui/icons-material/Home';
 
@@ -27,8 +28,8 @@ const routes: Routes = {
   [Pages.Postgraphile]: {
     component: asyncComponentLoader(() => import('@/pages/Postgraphile')),
     path: '/postgraphile/*',
-    title: 'Postgraphile',
-    icon: GitHubIcon,
+    title: 'Admin',
+    icon: ArticleIcon,
   },
   [Pages.NotFound]: {
     component: asyncComponentLoader(() => import('@/pages/NotFound')),
