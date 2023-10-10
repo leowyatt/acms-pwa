@@ -1,0 +1,34 @@
+version: '3.9'
+services:
+  pwa:
+    profiles: ['dev', 'pwa']
+    image: pwa
+    build:
+      target: pwa
+    restart: always
+    working_dir: /app
+    # environment:
+    #   - DATABASE_URL=postgres://db:db@db:5432/db
+    volumes:
+      - ./src:/app/src
+      - ./public:/app/public
+      - ./package.json:/app/package.json
+      - ./tsconfig.json:/app/tsconfig.json
+      - ./index.html:/app/index.html
+      - ./manifest.json:/app/manifest.json
+      - ./tsconfig.node.json:/app/tsconfig.node.json
+      - ./vite.config.ts:/app/vite.config.ts
+      - ./yarn.lock:/app/yarn.lock
+      - app_node:/app/node_modules
+    stdin_open: true
+    tty: true
+    ports:
+      - 0.0.0.0:5173:5173
+
+#-----------------------------------------------------------------------------
+networks:
+  app_default:
+
+# -----------------------------------------------------------------------------
+volumes:
+  app_node:
