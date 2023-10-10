@@ -12,12 +12,23 @@ import {
   TextInput,
   DateInput,
   useRecordContext,
+  Filter,
+  ReferenceInput,
+  SelectInput,
 } from "react-admin";
 import BookIcon from "@mui/icons-material/Book";
+import { Icon } from "@mui/material";
 export const PostIcon = BookIcon;
 
-export const PostList = () => (
-  <List>
+const PostFilter = (props: any) => (
+  <Filter {...props}>
+    <TextInput label='Search' source='q' alwaysOn />
+  </Filter>
+);
+
+
+export const PostList = (props: any) => (
+  <List filters={<PostFilter />} {...props}>
     <Datagrid>
       <TextField source="id" />
       <TextField source="attributes.title" />

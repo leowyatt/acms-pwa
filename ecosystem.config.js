@@ -13,7 +13,7 @@ module.exports = {
     {
       version: pkg.version,
       name: 'pwa-dev',
-      script: 'yarn develop',
+      script: 'yarn develop --host',
       env: {
         NODE_ENV: 'development',
       },

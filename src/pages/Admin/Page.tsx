@@ -5,6 +5,9 @@ import { useApolloClient } from '@apollo/client';
 import buildGraphQLProvider, { BuildQuery, IntrospectionResult } from 'ra-data-graphql-strapi';
 
 import { PostCreate, PostEdit, PostList } from '@/components/Admin/posts';
+import { apiUrl, tokenDef } from '@/config';
+
+import strapiRestProvider from '@/utils/simpleRestProvider';
 
 const Page = () => {
   const client = useApolloClient();
