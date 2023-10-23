@@ -1,5 +1,5 @@
 {
-  "name": "acms-app-pwa",
+  "name": "acms-pwa",
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
@@ -68,5 +68,14 @@
     "src/**/*.{js,jsx,ts,tsx,json}": [
       "eslint --max-warnings=0"
     ]
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "**/test/**",
+      "**/docs/**"
+    ],
+    "delay": 2500,
+    "watch": "./src/**/*",
+    "exec": "yarn develop --host"
   }
 }

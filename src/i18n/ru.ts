@@ -16,6 +16,9 @@ export const ru = {
   },
   ra: {
     ...russianMessages.ra,
+    configurable: {
+      customize: 'customize',
+    },
     page: {
       create: 'Создать %{name}',
       dashboard: 'Главная',

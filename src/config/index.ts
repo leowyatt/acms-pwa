@@ -57,7 +57,7 @@ const tokenDef =
 
 const apiUrlStrapi = window.location.origin.split(':5173')[0] + ':6010';
 
-const apiUrlPostgraphile = window.location.origin.split(':5173')[0] + ':4010';
+const apiUrlPostgraphile = window.location.origin.split(':5173')[0] + ':4020';
 
 export {
   loader,

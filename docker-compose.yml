@@ -1,10 +1,10 @@
 version: '3.9'
 services:
-  pwa:
-    profiles: ['dev', 'pwa']
-    image: pwa
+  app:
+    profiles: ['dev', 'app']
+    image: app
     build:
-      target: pwa
+      target: app
     restart: always
     working_dir: /app
     # environment:

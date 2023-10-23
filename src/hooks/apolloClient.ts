@@ -5,8 +5,8 @@ import { apiUrlPostgraphile as apiUrl, tokenDef } from '@/config';
 
 const httpLink = createHttpLink({
   uri: `${apiUrl}/graphql`,
-  // credentials: "include",
-  // credentials: "same-origin",
+  credentials: 'include',
+  // credentials: 'same-origin',
 });
 
 const authLink = setContext((_, { headers }) => {
