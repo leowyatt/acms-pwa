@@ -1,6 +1,4 @@
-###############################################################################
-
-FROM node:16-bullseye as app
+FROM node:20-bullseye-slim as app
 WORKDIR /app
 COPY package.json yarn.lock ./
 RUN yarn install

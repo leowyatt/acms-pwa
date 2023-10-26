@@ -7,8 +7,6 @@ services:
       target: app
     restart: always
     working_dir: /app
-    # environment:
-    #   - DATABASE_URL=postgres://db:db@db:5432/db
     volumes:
       - ./src:/app/src
       - ./public:/app/public
@@ -23,7 +21,7 @@ services:
     stdin_open: true
     tty: true
     ports:
-      - 0.0.0.0:5173:5173
+      - 127.0.0.1:5173:5173
 
 #-----------------------------------------------------------------------------
 networks:
