@@ -13,21 +13,21 @@ const routes: Routes = {
     title: 'Welcome',
     icon: HomeIcon,
   },
+  [Pages.Home]: {
+    component: asyncComponentLoader(() => import('@/pages/Home')),
+    path: '/home/*',
+    title: 'Home',
+    icon: HomeIcon,
+  },
   [Pages.Page]: {
     component: asyncComponentLoader(() => import('@/pages/Page')),
     path: '/page/*',
     title: 'Page',
     icon: GitHubIcon,
   },
-  // [Pages.Strapi]: {
-  //   component: asyncComponentLoader(() => import('@/pages/Strapi')),
-  //   path: '/strapi/*',
-  //   title: 'Strapi',
-  //   icon: GitHubIcon,
-  // },
-  [Pages.Postgraphile]: {
-    component: asyncComponentLoader(() => import('@/pages/Postgraphile')),
-    path: '/postgraphile/*',
+  [Pages.Admin]: {
+    component: asyncComponentLoader(() => import('@/pages/Admin')),
+    path: '/admin/*',
     title: 'Admin',
     icon: ArticleIcon,
   },
